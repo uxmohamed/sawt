@@ -15,16 +15,22 @@ understand a project quickly.
 
 ## How the sound recreation works
 
-Each reference WAV was analyzed with an offline pipeline (onset detection on a
-1 ms-hop RMS envelope, FFT pitch tracking with octave-error folding, spectral
-flatness for tone-vs-noise classification, harmonic profiling for waveform
-selection). Every detected acoustic event maps to a `@web-kits/audio` layer:
-tonal events become oscillators (fixed pitch or sweep), broadband transients
-become filtered noise bursts — plus a low sine "thump" body when the spectrum
-shows one. The generated definitions were verified by rendering them with the
-real library in headless Chromium and re-analyzing the output: all 54 sounds
-reproduce their event structure, and 43 match the original pitch trajectories
-within 12%.
+Each reference WAV goes through a deep analysis pipeline: onset detection on a
+1 ms-hop RMS envelope, then per-event STFT partial tracking (spectral peaks
+linked frame-by-frame with parabolic frequency interpolation), harmonic
+grouping into fundamental + overtone series, residual noise characterization
+(ratio, centroid, bandwidth), precise envelope measurement, and stereo pan
+estimation.
+
+Every acoustic event maps to `@web-kits/audio` layers: harmonic events become
+`wavetable` sources carrying the measured overtone amplitudes, inharmonic
+partials become parallel sine layers, and broadband residue becomes bandpassed
+noise. The definitions are then refined by analysis-by-synthesis: each patch is
+rendered with the real library in headless Chromium, re-analyzed with the same
+pipeline, and corrected per event (pitch, gain, decay, timing) across several
+passes, with a final detection-free window-based gain calibration against the
+reference waveforms. Median residual errors: 0.2% pitch, ~3% level, ~3% decay;
+mean clone score 90/100 across the 54 sounds.
 
 ## Development
 
