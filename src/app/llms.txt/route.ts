@@ -29,6 +29,17 @@ const DOC = {
           description: "Build a spec-compliant llms.txt with a live preview",
         },
         {
+          title: "Sounds",
+          url: "/sounds",
+          description:
+            "UI sound set recreated from acoustic analysis, synthesized in-browser with @web-kits/audio",
+        },
+        {
+          title: "Recreated sound patch",
+          url: "/patches/recreated.json",
+          description: "The @web-kits/audio patch JSON with all 54 recreated sound definitions",
+        },
+        {
           title: "Docs",
           url: "/docs",
           description: "What llms.txt is, the format anatomy, and how to publish one",

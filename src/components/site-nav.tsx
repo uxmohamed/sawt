@@ -7,6 +7,7 @@ const LINKS = [
   { href: "/directory", label: "Directory" },
   { href: "/viewer", label: "Viewer" },
   { href: "/generator", label: "Generator" },
+  { href: "/sounds", label: "Sounds" },
   { href: "/docs", label: "Docs" },
 ];
 

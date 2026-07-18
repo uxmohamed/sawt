@@ -19,6 +19,12 @@ const FEATURES = [
     description:
       "Build a spec-compliant llms.txt for your own project with a live preview, then copy or download it.",
   },
+  {
+    href: "/sounds",
+    title: "Sounds",
+    description:
+      "54 UI sounds recreated from acoustic analysis and synthesized live in your browser with @web-kits/audio.",
+  },
 ] as const;
 
 const EXAMPLE = `# @web-kits/audio
@@ -62,7 +68,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="grid gap-4 sm:grid-cols-3">
+      <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {FEATURES.map((feature) => (
           <Link
             key={feature.href}
