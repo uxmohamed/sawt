@@ -12,8 +12,7 @@ export default function SoundsPage() {
     <div>
       <h1 className="text-3xl font-bold tracking-tight">Sounds</h1>
       <p className="mt-2 max-w-2xl text-zinc-600 dark:text-zinc-400">
-        54 UI sounds recreated from acoustic analysis of reference recordings — onsets, pitch
-        tracks, envelopes, and spectral character measured, then rebuilt as declarative{" "}
+        54 UI sounds cloned from reference recordings and rebuilt as declarative{" "}
         <a
           href="https://audio.raphaelsalaja.com"
           target="_blank"
@@ -22,8 +21,12 @@ export default function SoundsPage() {
         >
           @web-kits/audio
         </a>{" "}
-        definitions. Nothing here is a recording: every sound is synthesized in your browser the
-        moment you press play, from the{" "}
+        definitions — deep acoustic analysis (partial tracking, harmonic profiling, noise
+        modeling) refined by analysis-by-synthesis. Compare for yourself:{" "}
+        <span className="font-mono text-sm">REF</span> plays the original recording,{" "}
+        <span className="font-mono text-sm">CLONE</span> synthesizes the sound live in your
+        browser, and <span className="font-mono text-sm">A→B</span> plays them back to back. The
+        clone definitions live in the{" "}
         <a
           href="/patches/recreated.json"
           className="font-mono text-sm text-indigo-600 hover:underline dark:text-indigo-400"
