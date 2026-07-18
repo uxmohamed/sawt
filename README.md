@@ -9,7 +9,7 @@ understand a project quickly.
 - **Directory** (`/directory`) — curated, searchable list of sites that publish an llms.txt file
 - **Viewer** (`/viewer`) — fetch any site's llms.txt, check its structure against the spec, and render it for humans
 - **Generator** (`/generator`) — build a spec-compliant llms.txt with a live preview, then copy or download it
-- **Sounds** (`/sounds`) — 54 UI sounds recreated from acoustic analysis of reference recordings, synthesized live in the browser with [@web-kits/audio](https://audio.raphaelsalaja.com); the patch ships at `/patches/recreated.json`
+- **Sounds** (`/sounds`) — 54 UI sounds cloned from reference recordings and synthesized live in the browser with [@web-kits/audio](https://audio.raphaelsalaja.com); every sound has REF / CLONE / A→B transport for side-by-side comparison against the original, with per-sound fidelity scores. The patch ships at `/patches/recreated.json`, references at `/ref/*.flac`
 - **Docs** (`/docs`) — what llms.txt is, the format anatomy, and how to publish one
 - **`/llms.txt`** — sawt publishes its own, naturally
 
